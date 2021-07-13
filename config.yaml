@@ -1,0 +1,15 @@
+redirect_uri: http://redirecturi
+authz_endpoint: https://sso.staging.acesso.gov.br/authorize
+token_endpoint: https://sso.staging.acesso.gov.br/token
+jwk_endpoint: https://sso.staging.acesso.gov.br/jwk
+scopes:
+  - openid
+  - profile
+  - phone
+  - govbr_confiabilidades
+client_id: <CLIENT_ID>
+client_secret: <CLIENT_SECRET>
+response_type: code
+user:
+  cpf: 70794705014
+  senha: senha_do_usuário
