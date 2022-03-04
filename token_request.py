@@ -45,8 +45,10 @@ def decode_token(token: str):
     try:
         decoded = jwt.decode(
             jwt=token,
-            key=SIGNING_KEY.key,
             audience=config.client_id,
+            # Necessário indicar qual a chave a ser usada porque
+            # o keyset do gov.br não aponta a chave com 'use':'sig'
+            key=SIGNING_KEY.key,
             algorithms=['RS256']
         )
         decoded['exp'] = pendulum.from_timestamp(

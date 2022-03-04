@@ -9,6 +9,7 @@ requests = "*"
 pyjwt = "*"
 pendulum = "*"
 pyyaml = "*"
+cryptography = "*"
 
 [dev-packages]
 
