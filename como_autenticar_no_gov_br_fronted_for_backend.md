@@ -20,6 +20,19 @@ backend for frontend).
 * Se tudo isso deu certo, tu passa o id de usuário pra tua infra de autenticação já existente, pra fazer autorização
 * Estando tudo certo, aí tu emite um “token de sessão” normalmente como tu já faz.
 
+# FAQ
+
+## Porque não simplesmente usar o token do gov.br como token da minha aplicação?
+
+Se você não precisar controlar o tempo de sessão do usuário e tiver ok de usar 
+ o tempo de sessão do token gov.br, tudo bem. Mas você ainda vai precisar checar as confiabilidades,
+ porque é trivial criar um cadastro em nome de outra pessoa usando o nível mais básico (carrossel de perguntas),
+ uma vez que os dados são vendidos livremente na internet. Não dá pra checar as confiabilidades só
+ no javascript, porque é trivial de burlar isso no javascript. Eu não sei porque o token não vem com essa
+ informação (existe um scopo chamado govbr_confiabilidades, mas ele deve estar desativado porque não vem nada
+ lá).
+ 
+
 
 
 [^0]: Se ela já tinha um endpoint pra usuário+senha, vai ser basicamente a mesma coisa. Só que em vez de receber usuário e senha, recebe um token.
